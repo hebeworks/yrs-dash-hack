@@ -1,0 +1,165 @@
+.btn {
+    @extend %delta;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration:none;
+    height: 40px;
+    
+    &.-inactive {
+        cursor: default;
+    }
+
+    &.-grey {
+        background-color: $light-grey;
+    
+        &:hover:not(.-inactive) {
+            color: $white;
+            background-color: $lime;
+        }
+        &:active {
+            background-color: $dark-grey;
+        }
+    }
+
+    &.-dark {
+        background-color: $dark-grey;
+        color: $white;
+    }
+
+    &.-white {
+        background-color: $white;
+    
+        &:hover:not(.-inactive) {
+            color: $white;
+            background-color: $lime;
+        }
+    }
+
+    &.-blue {
+        background-color: $blue;
+        color: $white;
+    }
+    
+    &.-red {
+        background-color: $red;
+        color: $white;
+    }
+
+    &.-dark-red {
+        background-color: $dark-red;
+        color: $white;
+    }
+
+    &.-selected {
+        background-color: $lime;
+        color: #d9f2bd;
+    }
+
+    &.-close {
+        width: 30px;
+        height: 30px;
+        display: block;
+        position: absolute;
+        top: 28px;
+        right: 43px;
+        .icon {
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+        
+        @include breakpoint(max-width 700px) {
+            top:0px;
+            right:0px;
+        }
+    }
+
+    &.-back {
+        width: 50px;
+        height: 50px;
+        background: #aaa;
+    }
+}
+
+.btn-list {
+    overflow: hidden;
+    padding: {
+        top: 10px;
+        bottom: 10px;
+    }
+    margin: {
+        top: 5px;
+        bottom: 10px;
+    }
+    border: {
+        top: dotted 1px #868080;
+        bottom: dotted 1px #868080;
+    }
+    
+    &.-borderless {
+        border: 0;
+    }
+    
+    .btn {
+        min-width: 100px;
+        height: 40px;
+        font: {
+            size: em(14px);
+        }
+        &.-search {
+            width: 180px;
+        }
+        &.-create {
+            width: 110px;
+            float: right;
+            background-color: $blue;
+            cursor: pointer;
+            &:hover {
+                background-color: lighten($blue, 5%);
+            }
+            .icon-conversation {
+                width: 15px;
+                display: inline-block;
+                vertical-align: middle;
+                margin: {
+                    top: -1px;
+                    right: 3px;
+                }
+                svg {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+        }
+        + .btn {
+            margin-left: 15px;
+        }
+        &.-half {
+            float:left;
+            width:49%;
+            &:nth-child(even) {
+                margin: {
+                    top:0;
+                    right:0;
+                    bottom:0;
+                    left: 2%;
+                }
+            }
+        }
+        &.-full {
+            width: 100%;
+        }
+        &.-one-third {
+            width:calc(33% - 10px);
+        }
+    }
+}
+
+a.btn {    
+    display: block;
+    padding: {
+        top:1em;
+    }
+}

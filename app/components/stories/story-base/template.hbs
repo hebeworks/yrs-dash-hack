@@ -1,0 +1,44 @@
+<div class="story__inner">
+    <div class="story__card -front {{if viewOnly 'js-drag-handle'}}">
+        {{#unless viewOnly}}<a href="javascript:;" class="js-cogs icon icon-cogs svg-cogs" data-grunticon-embed>Settings</a>{{/unless}}
+        <div class="story__content">
+            <header>
+                <h2 class="heading -gamma">{{title}}</h2>
+                <h3 class="heading -delta">{{subTitle}}</h3>
+            </header>
+        	{{yield}}
+            
+            {{#unless viewOnly}}<footer class="story__footer">
+                {{#if author}}
+                        {{#if author}}<div class="author">Author: {{author}}</div>{{/if}}
+                {{/if}}
+            </footer>{{/unless}}
+        </div>
+    </div>
+
+    <div class="story__card -back">
+        <a href="javascript:;" class="js-cogs icon icon-cogs icon-reverse svg-reverse" data-grunticon-embed>Settings</a>
+        <div class="story__content">
+            <header>
+                <h2 class="heading -gamma">{{title}}</h2>
+                <h3 class="heading -delta">{{subTitle}}</h3>
+            </header>
+            
+            <div class="btn-list">
+                {{ui/button-link href=dataSourceUrl title="View Data Source" classNames="btn -blue -half"}}
+                {{ui/button-link href=feedbackEmail type="mail" title="Contact Author" classNames="btn -blue -half"}}
+            </div>
+            
+            <div class="">
+                <p><strong>Description</strong></p>
+                <p>{{description}}</p>
+            </div><br>
+            {{#if license}}
+                <div class="">
+                    <p><strong>Licence / Attribution</strong></p>
+                    <p>{{{license}}}</p>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
