@@ -1,45 +1,22 @@
 
 {{#stories/story-base 
-    title=title 
+    title=Directions
     subTitle=subTitle 
     color="-lime" 
-    width="-w2" 
+    width="-w4" 
     height="-h2" 
     data-ss-colspan="2"
     
-    dataSourceUrl="http://leedsdatamill.org/dataset/leeds-city-centre-bike-bays"
-    feedbackEmail="info@leedsdatamill.org"
-    description="This Story used data from the City Centre Bike Bays dataset from Leeds Data Mill"
-    license="<a href='http://leedsdatamill.org/dataset/leeds-city-centre-bike-bays' target='_blank'>Leeds City Centre bike bays</a>, © Leeds City Council, 2015. This information is licensed under the terms of the Open Government Licence"
+    
     author="Nathan Smith"
     }}
     
     <div>
-        {{
-            select-2
-            content=items
-            value=selectedItem
-            optionLabelPath="street"
-            placeholder="Find a bay"
-        }}
+        
     </div>
+  
     
-    <main class="bicycle-bays">
-        {{google-map 
-            lat=lat 
-            lng=lng 
-            zoom=zoom
-            markers=markers
-            gopt_styles=mapStyles
-            gopt_zoomControl=false
-            gopt_mapTypeControl=false
-            }}
-<!--          
-  gopt_zoomControl=false
-            markerInfoWindowTemplateName='app/components/stories/complete/bicycle-bays/google-map-info-window/'
-            markerInfoWindowTemplateName='google-maps/info-window'
-            }}-->
-            
-    </main>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d75394.30403231193!2d-1.5357322999999998!3d53.8060025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48793e4ada64bd99%3A0x51adbafd0213dca9!2sLeeds%2C+West+Yorkshire%2C+UK!5e0!3m2!1sen!2sus!4v1436018583723" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+   
 
 {{/stories/story-base}}
